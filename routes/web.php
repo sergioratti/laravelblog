@@ -16,6 +16,11 @@ Route::get('/', [
     'as'=> 'index'
 ]);
 
+Route::get('/posts/{slug}', [
+    'uses' => 'FrontEndController@singlePost',
+    'as'=> 'single.post'
+]);
+
 Route::get('/test',function(){
     return App\User::find(1)->profile ;
 }) ;
