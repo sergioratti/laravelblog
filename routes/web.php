@@ -21,6 +21,16 @@ Route::get('/posts/{slug}', [
     'as'=> 'single.post'
 ]);
 
+Route::get('/category/{id}', [
+    'uses' => 'FrontEndController@category',
+    'as'=> 'single.category'
+]);
+
+Route::get('/tag/{id}', [
+    'uses' => 'FrontEndController@tag',
+    'as'=> 'single.tag'
+]);
+
 Route::get('/test',function(){
     return App\User::find(1)->profile ;
 }) ;

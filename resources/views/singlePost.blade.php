@@ -53,7 +53,7 @@
         
                                     <span class="category">
                                         <i class="seoicon-tags"></i>
-                                            <a href="#">{{$post->category->name}}</a>
+                                            <a href="{{route('single.category',['id' => $post->category->id])}}">{{$post->category->name}}</a>
                                     </span>
         
                                 </div>
@@ -65,7 +65,7 @@
                                         <div class="widget w-tags">
                                             <div class="tags-wrap">
                                                 @foreach($post->tags as $tag)
-                                                <a href="#" class="w-tags-item">{{$tag->tag}}</a>
+                                                <a href="{{route('single.tag',['id' => $tag->id])}}" class="w-tags-item">{{$tag->tag}}</a>
                                                 @endforeach
                                             </div>
                                         </div>
@@ -203,41 +203,6 @@
                 </main>
             </div>
         </div>
-        
-        <!-- Subscribe Form -->
-        
-        <div class="container-fluid bg-green-color">
-            <div class="row">
-                <div class="container">
-        
-                    <div class="row">
-        
-                        <div class="subscribe scrollme">
-        
-                            <div class="col-lg-6 col-lg-offset-5 col-md-6 col-md-offset-5 col-sm-12 col-xs-12">
-                                <h4 class="subscribe-title">Email Newsletters!</h4>
-                                <form class="subscribe-form" method="post" action="http://theme.crumina.net/html-seosight/import.php">
-                                    <input class="email input-standard-grey input-white" name="email" required="required" placeholder="Your Email Address" type="email">
-                                    <button class="subscr-btn">subscribe
-                                        <span class="semicircle--right"></span>
-                                    </button>
-                                </form>
-                                <div class="sub-title">Sign up for new Seosignt content, updates, surveys & offers.</div>
-        
-                            </div>
-        
-                            <div class="images-block">
-                                <img src="img/subscr-gear.png" alt="gear" class="gear">
-                                <img src="img/subscr1.png" alt="mail" class="mail">
-                                <img src="img/subscr-mailopen.png" alt="mail" class="mail-2">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- End Subscribe Form -->
         
         </div>
         
