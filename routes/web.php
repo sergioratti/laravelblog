@@ -31,6 +31,17 @@ Route::get('/tag/{id}', [
     'as'=> 'single.tag'
 ]);
 
+Route::get('/results',function(){
+    $posts = \App\Post::where('title','like','%' . request('query') . '%')->get() ;
+
+    return view('results')->with('posts',$posts)
+    ->with('setting',\App\Setting::first())
+        ->with('title', 'Results for : ' . request('query'))
+        ->with('categories', \App\Category::take(4)->get())
+        ->with('tags', \App\Tag::all()) ;
+
+}) ;
+
 Route::get('/test',function(){
     return App\User::find(1)->profile ;
 }) ;
