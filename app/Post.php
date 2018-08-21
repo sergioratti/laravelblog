@@ -14,7 +14,8 @@ class Post extends Model
         'content',
         'featured',
         'category_id',
-        'slug'
+        'slug',
+        'user_id'
     ] ;
 
     public function getFeaturedAttribute($featured){
@@ -29,5 +30,9 @@ class Post extends Model
 
     public function tags(){
         return $this->belongsToMany('App\Tag') ;
+    }
+
+    public function user(){
+        return $this->belongsTo('App\User') ;
     }
 }
